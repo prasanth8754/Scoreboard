@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import {
   MainContainer,
@@ -17,6 +17,10 @@ const Scoreboard = () => {
   const onDecrement = () => {
     setScore(prevScore => prevScore - 1)
   }
+
+  useEffect(() => {
+    document.title = `Score: ${score}`
+  })
 
   return (
     <MainContainer>
